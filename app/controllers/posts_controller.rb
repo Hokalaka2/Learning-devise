@@ -5,12 +5,21 @@ class PostsController < ApplicationController
         @posts = Post.all
     end
     def new 
-        @post = Post.new
+        @post = current_user.posts.build
     end
     def create
-        @post = Post.new(params[:id])
-        @post.save
-        redirect_to root_path
+        @post = current_user.posts.build(post_params)
+        
+        if @post.save
+            redirect_to root_path
+        else
+            flash[:notice] = @post.errors.messages
+            render new_post_path
+        end
+    end
+
+    def post_params
+        params.require(:post).permit(:title, :body)
     end
 
 end
