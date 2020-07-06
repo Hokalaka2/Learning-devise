@@ -1,1 +1,22 @@
-<h1>Hello </h1>
+<div class="container mr-auto ml-auto">
+    <div class="row">
+        <div class="col-md-4 ">
+            <h1>All Posts</h1>
+        </div>
+    </div>
+            <% @posts.each do |post| %>
+                <div class="row border">
+                    <div class="col-md-2 border-right">
+                        <%= post.title %> 
+                    </div>
+                    <div class="col-md-6 ">
+                        <%= post.body %> <br />
+                    </div>
+                    <% if user_signed_in? %>
+                        <div class="col-md-3 ">
+                            <p> By: <%= post.user.name%> </p>
+                        </div>
+                    <% end %>
+                </div>
+            <% end %>
+</div>

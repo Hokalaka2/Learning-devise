@@ -1,8 +1,13 @@
 <%= form_for(@post) do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
-
-<%= f.label :body %>
-<%= f.text_area :body %>
-<%= f.submit %>
+<div class="actions form-group mr-auto ml-auto">
+    <%= f.label :title %>
+    <%= f.text_field :title, class:"form-control" %>
+</div>
+<div class="actions form-group mr-auto ml-auto">
+    <%= f.label :body %>
+    <%= f.text_area :body, class:"form-control" %>
+</div>
+<div class="actions form-group mr-auto ml-auto">
+    <%= f.submit "Create Post", class: "btn btn-primary"%>
+</div>
 <% end %>

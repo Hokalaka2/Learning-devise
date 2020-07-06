@@ -13,10 +13,24 @@
 
 @import "bootstrap";
 
-.ml-auto {
-    margin-right: 0 !important;
-}
 .navbar-nav > li{
     padding-left:30px;
     padding-right:30px;
   }
+.form-group {
+    width: 25%;
+}
+.small-div {
+    width: 15%;
+}
+.border {
+    border: 5px;
+    border-color: blue;
+}
+.border-right {
+    border-right: 5px;
+    border-color: blue;
+}
+.container {
+    width: 50%;
+}
